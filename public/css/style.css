@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse; /* Remove space between borders */
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+/* Header styling */
+thead th {
+    background-color: #f4f4f4; /* Light gray background for headers */
+    padding: 10px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #ddd; /* Add a bottom border for separation */
+}
+
+/* Row styling */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background color */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff; /* White background for odd rows */
+}
+
+/* Cell styling */
+td {
+    padding: 10px; /* Add padding inside cells */
+    border-bottom: 1px solid #ddd; /* Add a bottom border for cells */
+}
+
+/* Completed/Not classes */
+.completed {
+    color: red; /* Green text for completed items */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.not {
+    color: black; /* Red text for not completed items */
+    font-weight: normal; /* Normal weight for text */
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+}

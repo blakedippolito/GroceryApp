@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Grocery List</h1>
-    <ul></ul>
+    <form action="/list/addItem" method="POST">
+        <input type="text" placeholder="Enter Item" name="itemName">
+        <input type="number" placeholder="Enter Amount" name="itemAmount" value=1>
+        <input type="submit">
+    </form>
     
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Amount</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% items.forEach(el => { %>
+                <tr>
+                    <td class="listItem" data-id="<%= el._id %>">
+                        <span class='listItem <%= el.completed === true ? 'completed' : 'incompleted'%>'>
+                            <img src="">
+                            <%= el.item %>
+                            
+                        </span>
+                    </td>
+                    <td>
+                        <%= el.amount %>
+                    </td>
+                    <td><span class='del fa fa-trash'></span></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    
+
+    <h2>Items left: <%=left %></h2>
+
+    <script src="js/main.js"></script>
+    <script src="js/icons.js"></script>
 </body>
 </html>
