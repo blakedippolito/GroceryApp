@@ -41,8 +41,7 @@ td {
 
 /* Completed/Not classes */
 .completed {
-    color: red; /* Green text for completed items */
-    font-weight: bold; /* Bold text for emphasis */
+    text-decoration: line-through;
 }
 
 .not {
