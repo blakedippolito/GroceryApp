@@ -1,10 +1,12 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
 
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
       dbName: 'groceries',
+      useNewUrlParser: true,
+      // useFindAndModify: false,
+      // useCreateIndex: true
     })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`)

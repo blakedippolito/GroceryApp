@@ -13,6 +13,10 @@ const iconRoutes = require('./routes/icons')
 
 
 require('dotenv').config({path: './config/.env'})
+
+// Passport config
+require('./config/passport')(passport)
+
 connectDB()
 
 app.set('view engine', 'ejs')
@@ -27,7 +31,7 @@ app.use(
       secret: 'keyboard cat',
       resave: false,
       saveUninitialized: false,
-      store: new MongoStore({ mongoUrl: process.env.DB_STRING,mongooseConnection: mongoose.connection }),
+      store: new MongoStore({ mongoUrl: process.env.DB_STRING }),
     })
   )
   
